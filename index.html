@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0d1117">
+  <title>Movie Recognizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header><div class="mark">▶</div><div><h1>Movie Recognizer</h1><p>Find a movie from what is on screen</p></div></header>
+    <section class="panel">
+      <label for="apiUrl">Backend API URL</label>
+      <input id="apiUrl" type="url" value="http://127.0.0.1:8000" autocomplete="url">
+      <p class="hint">Use the computer's LAN IP when opening this page on a different phone.</p>
+      <div class="video-wrap"><video id="video" autoplay playsinline muted></video><div id="cameraPlaceholder">Camera preview appears here</div></div>
+      <div class="actions">
+        <button id="startBtn">Start camera</button>
+        <button id="identifyBtn" disabled>Capture 10 & identify</button>
+        <button id="stopBtn" class="secondary" disabled>Stop</button>
+      </div>
+      <p id="status" role="status">Ready. Start the camera to begin.</p>
+    </section>
+    <section class="panel">
+      <h2>Top matches</h2>
+      <div id="results" class="results"><p class="hint">Your three best guesses will appear here.</p></div>
+    </section>
+    <footer>Similarity scores are not probabilities. Results depend on your reference-frame library.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
